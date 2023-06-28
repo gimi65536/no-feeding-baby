@@ -3,8 +3,7 @@ package xyz.gimi65536.fabric.nofeedingbaby
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 import net.minecraft.util.ActionResult;
-import net.minecraft.entity.passive.CowEntity
-import net.minecraft.item.Items
+import net.minecraft.entity.passive.AnimalEntity
 import net.fabricmc.fabric.api.event.player.UseEntityCallback
 
 object NoFeedingBabyMod : ModInitializer {
@@ -18,11 +17,14 @@ object NoFeedingBabyMod : ModInitializer {
 			if(player.isSpectator()){
 				return ActionResult.PASS
 			}
-			if(entity is CowEntity && entity.isBaby() && player.getStackInHand(hand).item.equals(Items.WHEAT)){
-				return ActionResult.FAIL
+			if(entity is AnimalEntity){
+				val animal: AnimalEntity = entity
+				if(animal.isBaby && animal.isBreedingItem(player.getStackInHand(hand))){
+					return ActionResult.FAIL
+				}
 			}
 			return ActionResult.PASS
 		})
-		logger.info("Cow babies cannot eat wheat now.")
+		logger.info("Baby animals cannot eat food now.")
 	}
 }
