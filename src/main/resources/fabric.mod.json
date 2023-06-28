@@ -3,13 +3,13 @@
 	"id": "no-feeding-baby",
 	"version": "${version}",
 	"name": "No Feeding Baby",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This is a fabric mod to prevent from feeding baby animals.",
 	"authors": [
-		"Me!"
+		"gimi65536"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://blog.gimi65536.xyz/",
+		"sources": "https://github.com/gimi65536/no-feeding-baby"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/no-feeding-baby/icon.png",

@@ -1,0 +1,1 @@
+Prevent users from feeding baby animals.
