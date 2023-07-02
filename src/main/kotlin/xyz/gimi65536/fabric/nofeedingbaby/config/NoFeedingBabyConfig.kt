@@ -38,7 +38,7 @@ open class NoFeedingBabyConfig{
 	fun load(){
 		val path = FabricLoader.getInstance().configDir.resolve(filename)
 		if(!path.exists()){
-			return
+			return save() // Save a default file
 		}
 		val fileconfig = FileConfig.builder(path).concurrent().build()
 		fileconfig.load()
