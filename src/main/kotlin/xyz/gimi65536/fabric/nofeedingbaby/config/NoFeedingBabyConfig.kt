@@ -12,11 +12,14 @@ val filename = "no-feeding-baby.yml"
 val DEFAULT_WHITELISTMODE: Boolean = true
 
 fun newConfig(): NoFeedingBabyConfig {
+	var config: NoFeedingBabyConfig
 	if(FabricLoader.getInstance().isModLoaded("modmenu") && FabricLoader.getInstance().isModLoaded("yet-another-config-lib")){
-		return NoFeedingBabyYACLConfig()
+		config = NoFeedingBabyYACLConfig()
 	}else{
-		return NoFeedingBabyConfig()
+		config = NoFeedingBabyConfig()
 	}
+	config.load()
+	return config
 }
 
 open class NoFeedingBabyConfig{
