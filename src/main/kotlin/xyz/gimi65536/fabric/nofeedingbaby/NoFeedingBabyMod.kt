@@ -8,6 +8,7 @@ import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.Entity
 import net.fabricmc.fabric.api.event.player.UseEntityCallback
+import xyz.gimi65536.fabric.nofeedingbaby.config.NoFeedingBabyConfig
 
 object NoFeedingBabyMod : ModInitializer {
     private val logger = LoggerFactory.getLogger("no-feeding-baby")

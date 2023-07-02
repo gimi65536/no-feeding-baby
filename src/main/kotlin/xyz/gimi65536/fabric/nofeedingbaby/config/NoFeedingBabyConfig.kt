@@ -11,7 +11,15 @@ import net.minecraft.client.gui.screen.Screen
 val filename = "no-feeding-baby.yml"
 val DEFAULT_WHITELISTMODE: Boolean = true
 
-class NoFeedingBabyConfig{	
+fun newConfig(): NoFeedingBabyConfig {
+	if(FabricLoader.getInstance().isModLoaded("modmenu") && FabricLoader.getInstance().isModLoaded("yet-another-config-lib")){
+		return NoFeedingBabyYACLConfig()
+	}else{
+		return NoFeedingBabyConfig()
+	}
+}
+
+open class NoFeedingBabyConfig{
 	var whitelistMode: Boolean = DEFAULT_WHITELISTMODE
 	var list = LinkedHashSet<String>()
 
@@ -47,7 +55,7 @@ class NoFeedingBabyConfig{
 	}
 
 	@Suppress("UNUSED_PARAMETER")
-	fun gui(parent: Screen? = null): Screen? {
+	open fun gui(parent: Screen? = null): Screen? {
 		return null
 	}
 }
