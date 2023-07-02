@@ -42,6 +42,10 @@
 		"fabric-api": "*",
 		"fabric-language-kotlin": ">=1.8.22"
 	},
+	"recommends": {
+		"yet_another_config_lib": "*",
+		"modmenu": "*"
+	},
 	"suggests": {
 		"another-mod": "*"
 	}
