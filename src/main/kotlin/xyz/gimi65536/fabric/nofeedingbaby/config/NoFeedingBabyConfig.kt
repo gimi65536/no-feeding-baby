@@ -1,20 +1,49 @@
 package xyz.gimi65536.fabric.nofeedingbaby.config
 
+import com.electronwill.nightconfig.core.Config
 import com.electronwill.nightconfig.core.file.FileConfig
+import java.io.File
 import kotlin.collections.LinkedHashSet
+import kotlin.io.path.exists
 import net.fabricmc.loader.api.FabricLoader
 import net.minecraft.client.gui.screen.Screen
 
-class NoFeedingBabyConfig{
-	protected var whitelistMode: Boolean = true
-	protected var list = LinkedHashSet<String>()
+val filename = "no-feeding-baby.yml"
+val DEFAULT_WHITELISTMODE: Boolean = true
+
+class NoFeedingBabyConfig{	
+	var whitelistMode: Boolean = DEFAULT_WHITELISTMODE
+	var list = LinkedHashSet<String>()
 
 	fun save(){
-		//
+		val fileconfig = FileConfig
+			.builder(FabricLoader.getInstance().configDir.resolve(filename))
+			.concurrent()
+			.build()
+
+		fileconfig.set<Any>("whitelistMode", whitelistMode)
+		fileconfig.set<Any>("list", list.toList())
+		fileconfig.save()
+		fileconfig.close()
 	}
 
 	fun load(){
-		//
+		val path = FabricLoader.getInstance().configDir.resolve(filename)
+		if(!path.exists()){
+			return
+		}
+		val fileconfig = FileConfig.builder(path).concurrent().build()
+		fileconfig.load()
+
+		whitelistMode = fileconfig.getOrElse("whitelistMode", DEFAULT_WHITELISTMODE)
+		val loadedlist: List<String>? = fileconfig.getOrElse("list", null)
+		if(loadedlist == null){
+			// Empty list
+			list.clear()
+		}else{
+			list = LinkedHashSet(loadedlist)
+		}
+		fileconfig.close()
 	}
 
 	@Suppress("UNUSED_PARAMETER")
