@@ -1,7 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.2-SNAPSHOT'
 	id 'maven-publish'
-  id "org.jetbrains.kotlin.jvm" version "1.8.22"
+	id "org.jetbrains.kotlin.jvm" version "1.8.22"
 }
 
 version = project.mod_version
@@ -44,6 +44,8 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
+
+	implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${project.jackson_dataformat_version}"
 }
 
 processResources {
