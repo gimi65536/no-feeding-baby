@@ -43,7 +43,7 @@
 		"fabric-language-kotlin": ">=1.8.22"
 	},
 	"recommends": {
-		"yet_another_config_lib": "*",
+		"yet_another_config_lib_v3": "*",
 		"modmenu": "*"
 	},
 	"suggests": {
