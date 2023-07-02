@@ -13,6 +13,7 @@ object NoFeedingBabyMod : ModInitializer {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
+		@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 		UseEntityCallback.EVENT.register(fun(player, world, hand, entity, hitResult): ActionResult {
 			if(player.isSpectator()){
 				return ActionResult.PASS
