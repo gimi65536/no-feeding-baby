@@ -9,7 +9,7 @@ import dev.isxander.yacl3.gui.controllers.BooleanController
 import net.minecraft.client.gui.screen.Screen
 import net.minecraft.text.Text
 import xyz.gimi65536.fabric.nofeedingbaby.NoFeedingBabyMod
-import xyz.gimi65536.fabric.nofeedingbaby.config.DEFAULT_WHITELISTMODE
+import xyz.gimi65536.fabric.nofeedingbaby.config.NoFeedingBabyConfig
 
 object YACLIntegration{
 	fun getModConfigScreen(parent: Screen): Screen {
@@ -26,16 +26,16 @@ object YACLIntegration{
 							Text.literal("Blacklist mode\nONLY baby animals listed CANNOT be fed"))
 					}})
 					.binding(
-						DEFAULT_WHITELISTMODE,
-						{NoFeedingBabyMod.config.whitelistMode},
-						{value -> NoFeedingBabyMod.config.whitelistMode = value}
+						NoFeedingBabyConfig.DEFAULT_WHITELISTMODE,
+						{NoFeedingBabyConfig.whitelistMode},
+						{value -> NoFeedingBabyConfig.whitelistMode = value}
 					)
 					.customController({opt -> BooleanController(opt, BooleanController.YES_NO_FORMATTER, true)})
 					.build()
 				)
 				.build()
 			)
-			.save(NoFeedingBabyMod.config::save)
+			.save(NoFeedingBabyConfig::save)
 			.build()
 			.generateScreen(parent)
 	}

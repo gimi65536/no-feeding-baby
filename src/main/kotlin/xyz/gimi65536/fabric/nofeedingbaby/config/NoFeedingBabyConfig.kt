@@ -7,16 +7,10 @@ import kotlin.collections.LinkedHashSet
 import kotlin.io.path.exists
 import net.fabricmc.loader.api.FabricLoader
 
-val filename = "no-feeding-baby.yml"
-val DEFAULT_WHITELISTMODE: Boolean = true
+object NoFeedingBabyConfig{
+	val filename = "no-feeding-baby.yml"
+	val DEFAULT_WHITELISTMODE: Boolean = true
 
-fun newConfig(): NoFeedingBabyConfig {
-	val config = NoFeedingBabyConfig()
-	config.load()
-	return config
-}
-
-class NoFeedingBabyConfig{
 	var whitelistMode: Boolean = DEFAULT_WHITELISTMODE
 	var list = LinkedHashSet<String>()
 

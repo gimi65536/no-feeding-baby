@@ -9,12 +9,10 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
 import net.fabricmc.fabric.api.event.player.UseEntityCallback
-import xyz.gimi65536.fabric.nofeedingbaby.config.newConfig
+import xyz.gimi65536.fabric.nofeedingbaby.config.NoFeedingBabyConfig
 
 object NoFeedingBabyMod : ModInitializer {
     private val logger = LoggerFactory.getLogger("no-feeding-baby")
-
-	val config = newConfig()
 
 	override fun onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -44,7 +42,7 @@ object NoFeedingBabyMod : ModInitializer {
 				val identifier = EntityType.getId(animal.getType()).toString()
 				// If not contained in the whilelist
 				// or contained in the blacklist
-				return if (config.whitelistMode xor config.list.contains(identifier)) ActionResult.FAIL
+				return if (NoFeedingBabyConfig.whitelistMode xor NoFeedingBabyConfig.list.contains(identifier)) ActionResult.FAIL
 					else ActionResult.PASS
 			}
 		}
