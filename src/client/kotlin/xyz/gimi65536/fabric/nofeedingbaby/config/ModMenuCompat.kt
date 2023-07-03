@@ -9,7 +9,7 @@ object ModMenuCompat: ModMenuApi{
 		return ConfigScreenFactory({parent ->
 			// Add supported mods here
 			if(FabricLoader.getInstance().isModLoaded("yet-another-config-lib"))
-				null
+				YACLIntegration.getModConfigScreen(parent)
 			else
 				null
 		})
