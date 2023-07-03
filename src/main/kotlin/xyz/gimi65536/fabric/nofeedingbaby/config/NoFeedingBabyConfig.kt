@@ -12,7 +12,6 @@ val DEFAULT_WHITELISTMODE: Boolean = true
 
 fun newConfig(): NoFeedingBabyConfig {
 	val config = NoFeedingBabyConfig()
-	// if(FabricLoader.getInstance().isModLoaded("modmenu") && FabricLoader.getInstance().isModLoaded("yet-another-config-lib")){
 	config.load()
 	return config
 }
