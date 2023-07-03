@@ -26,6 +26,12 @@
 				"value": "xyz.gimi65536.fabric.nofeedingbaby.NoFeedingBabyModClient",
 				"adapter": "kotlin"
 			}
+		],
+		"modmenu": [
+			{
+				"value": "xyz.gimi65536.fabric.nofeedingbaby.config.ModMenuCompat",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [
