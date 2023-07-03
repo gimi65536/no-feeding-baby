@@ -16,7 +16,7 @@ fun newConfig(): NoFeedingBabyConfig {
 	return config
 }
 
-open class NoFeedingBabyConfig{
+class NoFeedingBabyConfig{
 	var whitelistMode: Boolean = DEFAULT_WHITELISTMODE
 	var list = LinkedHashSet<String>()
 
