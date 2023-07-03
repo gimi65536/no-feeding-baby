@@ -9,6 +9,7 @@
 	],
 	"contact": {
 		"homepage": "https://blog.gimi65536.xyz/",
+		"issues": "https://github.com/gimi65536/no-feeding-baby/issues",
 		"sources": "https://github.com/gimi65536/no-feeding-baby"
 	},
 	"license": "CC0-1.0",
@@ -26,6 +27,12 @@
 				"value": "xyz.gimi65536.fabric.nofeedingbaby.NoFeedingBabyModClient",
 				"adapter": "kotlin"
 			}
+		],
+		"modmenu": [
+			{
+				"value": "xyz.gimi65536.fabric.nofeedingbaby.config.ModMenuCompat",
+				"adapter": "kotlin"
+			}
 		]
 	},
 	"mixins": [
@@ -41,6 +48,10 @@
 		"java": ">=17",
 		"fabric-api": "*",
 		"fabric-language-kotlin": ">=1.8.22"
+	},
+	"recommends": {
+		"yet_another_config_lib_v3": "*",
+		"modmenu": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
