@@ -25,10 +25,9 @@ object NoFeedingBabyMod : ModInitializer {
 				// In logical client, see NoFeedingBabyModClient
 				return ActionResult.PASS
 			}
-			NoFeedingBabyConfig.load()
 			return checkAction(player, hand, entity)
 		})
-
+		NoFeedingBabyConfig.load()
 		logger.info("Baby animals cannot eat food now.")
 	}
 

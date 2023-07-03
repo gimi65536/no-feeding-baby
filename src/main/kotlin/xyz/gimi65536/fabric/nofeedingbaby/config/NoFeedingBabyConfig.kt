@@ -3,11 +3,12 @@ package xyz.gimi65536.fabric.nofeedingbaby.config
 import com.electronwill.nightconfig.core.Config
 import com.electronwill.nightconfig.core.file.FileConfig
 import java.io.File
-import kotlin.collections.LinkedHashSet
 import kotlin.io.path.exists
+import org.slf4j.LoggerFactory
 import net.fabricmc.loader.api.FabricLoader
 
 object NoFeedingBabyConfig{
+    private val logger = LoggerFactory.getLogger("no-feeding-baby")
 	val filename = "no-feeding-baby.yml"
 	val DEFAULT_WHITELISTMODE: Boolean = true
 
@@ -39,6 +40,7 @@ object NoFeedingBabyConfig{
 		if(loadedlist == null){
 			// Empty list
 			list.clear()
+			logger.info("Failed to load configuration.")
 		}else{
 			list = LinkedHashSet(loadedlist)
 		}
