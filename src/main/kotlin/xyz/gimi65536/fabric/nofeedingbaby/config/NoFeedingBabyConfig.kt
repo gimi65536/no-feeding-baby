@@ -6,7 +6,7 @@ import java.io.File
 import kotlin.collections.LinkedHashSet
 import kotlin.io.path.exists
 import net.fabricmc.loader.api.FabricLoader
-// import net.minecraft.client.gui.screen.Screen
+import net.minecraft.client.gui.screen.Screen
 
 val filename = "no-feeding-baby.yml"
 val DEFAULT_WHITELISTMODE: Boolean = true
@@ -57,8 +57,8 @@ open class NoFeedingBabyConfig{
 		fileconfig.close()
 	}
 
-	/*@Suppress("UNUSED_PARAMETER")
+	@Suppress("UNUSED_PARAMETER")
 	open fun gui(parent: Screen? = null): Screen? {
 		return null
-	}*/
+	}
 }
