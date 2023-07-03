@@ -2,10 +2,12 @@ package xyz.gimi65536.fabric.nofeedingbaby.config
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory
 import dev.isxander.yacl3.api.ConfigCategory
+import dev.isxander.yacl3.api.ListOption
 import dev.isxander.yacl3.api.Option
 import dev.isxander.yacl3.api.OptionDescription
 import dev.isxander.yacl3.api.YetAnotherConfigLib
 import dev.isxander.yacl3.gui.controllers.BooleanController
+import dev.isxander.yacl3.gui.controllers.string.StringController
 import net.minecraft.client.gui.screen.Screen
 import net.minecraft.text.Text
 import xyz.gimi65536.fabric.nofeedingbaby.NoFeedingBabyMod
@@ -31,6 +33,18 @@ object YACLIntegration{
 						{value -> NoFeedingBabyConfig.whitelistMode = value}
 					)
 					.customController({opt -> BooleanController(opt, BooleanController.YES_NO_FORMATTER, true)})
+					.build()
+				)
+				.group(ListOption.createBuilder<String>()
+					.name(Text.literal("List"))
+					.collapsed(false)
+					.binding(
+						listOf(),
+						{NoFeedingBabyConfig.list.toList()},
+						{newList -> NoFeedingBabyConfig.list = LinkedHashSet(newList)}
+					)
+					.customController({opt -> StringController(opt)})
+					.initial("")
 					.build()
 				)
 				.build()
