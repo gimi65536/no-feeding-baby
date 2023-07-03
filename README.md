@@ -29,7 +29,8 @@ feeding.
 This mod is designed for client uses, but it should work in the server side.
 
 ## TODO
-It is better if users can *toggle* which baby animals can be fed in a more intuitive way,
-such as "ALT+right-click" a baby.
+- It is better if users can *toggle* which baby animals can be fed in a more intuitive way,
+	such as "ALT+right-click" a baby.
+- Translation (not hard-coding texts)
 
 I am not sure if I have time to do those, though.
