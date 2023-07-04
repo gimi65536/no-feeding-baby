@@ -1,6 +1,5 @@
 package xyz.gimi65536.fabric.nofeedingbaby.config
 
-import com.electronwill.nightconfig.core.Config
 import com.electronwill.nightconfig.core.file.FileConfig
 import java.io.File
 import kotlin.io.path.exists
