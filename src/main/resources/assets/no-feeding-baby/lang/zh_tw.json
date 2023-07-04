@@ -1,0 +1,12 @@
+{
+	"no-feeding-baby.whitelist": "白名單",
+	"no-feeding-baby.blacklist": "黑名單",
+	"no-feeding-baby.whitelistmode": "白名單模式",
+	"no-feeding-baby.blacklistmode": "黑名單模式",
+	"no-feeding-baby.whitelist-tooltip": "名單內的小動物可以被餵食，其餘不可",
+	"no-feeding-baby.blacklist-tooltip": "名單內的小動物不可被餵食，其餘皆可",
+	"no-feeding-baby.configtitle": "「禁止餵養小動物」設置",
+	"no-feeding-baby.general": "一般設定",
+	"no-feeding-baby.mode": "模式",
+	"no-feeding-baby.animal": "動物"
+}

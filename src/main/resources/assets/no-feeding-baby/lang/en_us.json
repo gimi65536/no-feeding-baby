@@ -1,0 +1,12 @@
+{
+	"no-feeding-baby.whitelist": "Whitelist",
+	"no-feeding-baby.blacklist": "Blacklist",
+	"no-feeding-baby.whitelistmode": "Whitelist mode",
+	"no-feeding-baby.blacklistmode": "Blacklist mode",
+	"no-feeding-baby.whitelist-tooltip": "ONLY baby animals listed CAN be fed",
+	"no-feeding-baby.blacklist-tooltip": "ONLY baby animals listed CANNOT be fed",
+	"no-feeding-baby.configtitle": "No Feeding Baby Configuration",
+	"no-feeding-baby.general": "General",
+	"no-feeding-baby.mode": "Mode",
+	"no-feeding-baby.animal": "Animal"
+}
