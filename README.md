@@ -31,13 +31,13 @@ However, it also works in the server side, too.
 
 Baby animals get fed only if both two sides allow:
 
-| Client→<br>↓Server | Not Installed  | Allow          | Disallow     |
-|--------------------|----------------|----------------|--------------|
-| Not Installed      | :check_mark:   | :check_mark:   | :cross_mark: |
-| Allow              | :check_mark:   | :check_mark:   | :cross_mark: |
-| Disallow           | :cross_mark:\* | :cross_mark:\* | :cross_mark: |
+| Client→<br>↓Server | Not Installed  | Allow | Disallow |
+|--------------------|----------------|-------|----------|
+| Not Installed      | ✔️ | ✔️ | ❌ |
+| Allow              | ✔️ | ✔️ | ❌ |
+| Disallow           | ❌\* | ❌\* | ❌ |
 
-\* If the feeding is disabled by server-side only,
+\* If feeding is disabled by server-side only,
 the player will see a falsy feeding,
 which in fact doesn't consume any food.
 
