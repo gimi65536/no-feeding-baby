@@ -25,8 +25,21 @@ In the configuration, you can tell the mod to use whitelist mode or blacklist mo
 and add the identifier (such as `minecraft:cow`) into the list to enable/disable
 feeding.
 
-## Notes
-This mod is designed for client uses, but it should work in the server side.
+### Client- and Server-side Supports
+*The mod is designed for client uses.*
+However, it also works in the server side, too.
+
+Baby animals get fed only if both two sides allow:
+
+| Client→<br>↓Server | Not Installed  | Allow          | Disallow     |
+|--------------------|----------------|----------------|--------------|
+| Not Installed      | :check_mark:   | :check_mark:   | :cross_mark: |
+| Allow              | :check_mark:   | :check_mark:   | :cross_mark: |
+| Disallow           | :cross_mark:\* | :cross_mark:\* | :cross_mark: |
+
+\* If the feeding is disabled by server-side only,
+the player will see a falsy feeding,
+which in fact doesn't consume any food.
 
 ## TODO
 - It is better if users can *toggle* which baby animals can be fed in a more intuitive way,
