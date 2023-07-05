@@ -41,6 +41,7 @@ object NoFeedingBabyModClient : ClientModInitializer {
 			@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 			fun(client){
 				if(toggleModeKey.wasPressed()){
+					NoFeedingBabyConfig.toggleMode()
 					MinecraftClient.getInstance().inGameHud.setOverlayMessage(
 						Text.translatable("no-feeding-baby.togglemode-1")
 						.append(
@@ -54,6 +55,12 @@ object NoFeedingBabyModClient : ClientModInitializer {
 						)
 						.append(Text.translatable("no-feeding-baby.togglemode-2"))
 					, true)
+					try {
+						NoFeedingBabyConfig.save()
+					}
+					catch(Exception e) {
+						// Silent
+					}
 				}
 			}
 		)
