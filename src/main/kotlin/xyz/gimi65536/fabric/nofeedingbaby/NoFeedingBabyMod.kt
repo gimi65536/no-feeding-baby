@@ -25,27 +25,36 @@ object NoFeedingBabyMod : ModInitializer {
 				// In logical client, see NoFeedingBabyModClient
 				return ActionResult.PASS
 			}
-			return checkAction(player, hand, entity)
+			if(checkValid(player, hand, entity)){
+				return getAction(entity as AnimalEntity)
+			}
+			return ActionResult.PASS
 		})
 		NoFeedingBabyConfig.load()
 		logger.info("Baby animals cannot eat food now.")
 	}
 
-	fun checkAction(player: PlayerEntity, hand: Hand, entity: Entity): ActionResult{
+	/* Check if this is a valid condition to do more */
+	fun checkValid(player: PlayerEntity, hand: Hand, entity: Entity): Boolean{
 		if(player.isSpectator()){
-			return ActionResult.PASS
+			return false
 		}
 		if(entity is AnimalEntity){
 			val animal: AnimalEntity = entity
 			if(animal.isBaby && animal.isBreedingItem(player.getStackInHand(hand))){
-				// Check identifier
-				val identifier = EntityType.getId(animal.getType()).toString()
-				// If not contained in the whilelist
-				// or contained in the blacklist
-				return if (NoFeedingBabyConfig.whitelistMode xor NoFeedingBabyConfig.list.contains(identifier)) ActionResult.FAIL
-					else ActionResult.PASS
+				return true
 			}
 		}
-		return ActionResult.PASS
+		return false
+	}
+
+	fun getAction(animal: AnimalEntity): ActionResult{
+		// Check identifier
+		val identifier = EntityType.getId(animal.getType()).toString()
+		// If not contained in the whilelist
+		// or contained in the blacklist
+		return if (NoFeedingBabyConfig.whitelistMode xor NoFeedingBabyConfig.list.contains(identifier))
+				ActionResult.FAIL
+		else ActionResult.PASS
 	}
 }
