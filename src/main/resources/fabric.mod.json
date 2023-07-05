@@ -58,5 +58,12 @@
 	},
 	"suggests": {
 		"another-mod": "*"
+	},
+	"custom": {
+		"mc-publish": {
+			"dependencies": [
+				"yacl(recommended){modrinth:1eAoo2KR}"
+			]
+		}
 	}
 }
