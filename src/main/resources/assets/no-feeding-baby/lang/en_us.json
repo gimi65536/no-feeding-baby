@@ -11,5 +11,11 @@
 	"no-feeding-baby.animal": "Animal",
 	"no-feeding-baby.key.category": "No Feeding Baby",
 	"no-feeding-baby.key.toggle": "Put into or drop from list",
-	"no-feeding-baby.key.bypass": "Forcely feeding baby"
+	"no-feeding-baby.key.bypass": "Forcely feeding baby",
+	"no-feeding-baby.added-1": "Added ",
+	"no-feeding-baby.added-2": " into",
+	"no-feeding-baby.added-3": "",
+	"no-feeding-baby.removed-1": "Removed ",
+	"no-feeding-baby.removed-2": " from",
+	"no-feeding-baby.removed-3": ""
 }
