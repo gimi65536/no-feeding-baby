@@ -2,7 +2,7 @@ package xyz.gimi65536.fabric.nofeedingbaby
 
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
-import net.minecraft.util.ActionResult;
+import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.player.PlayerEntity

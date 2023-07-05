@@ -8,5 +8,8 @@
 	"no-feeding-baby.configtitle": "No Feeding Baby Configuration",
 	"no-feeding-baby.general": "General",
 	"no-feeding-baby.mode": "Mode",
-	"no-feeding-baby.animal": "Animal"
+	"no-feeding-baby.animal": "Animal",
+	"no-feeding-baby.key.category": "No Feeding Baby",
+	"no-feeding-baby.key.toggle": "Put into or drop from list",
+	"no-feeding-baby.key.bypass": "Forcely feeding baby"
 }

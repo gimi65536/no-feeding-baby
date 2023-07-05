@@ -47,7 +47,8 @@
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*",
-		"fabric-language-kotlin": ">=1.8.22"
+		"fabric-language-kotlin": ">=1.8.22",
+		"fabric-key-binding-api-v1": "*"
 	},
 	"recommends": {
 		"yet_another_config_lib_v3": "*",
