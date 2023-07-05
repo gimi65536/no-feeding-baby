@@ -47,6 +47,5 @@ which in fact doesn't consume any food.
 Server ops (with op level at least 2) can set configuration by commands `/nofeedingbaby`.
 
 ## Note
-Features I thought the mod should contain have been fully implemented.
-It is likely that I have no much time to maintain this mod,
+It is likely that I have no much time to improve and maintain this mod,
 but if you have any suggestion, feel free to open issues on github.
