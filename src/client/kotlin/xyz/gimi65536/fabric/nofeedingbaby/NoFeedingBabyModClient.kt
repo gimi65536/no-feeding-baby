@@ -55,12 +55,7 @@ object NoFeedingBabyModClient : ClientModInitializer {
 						)
 						.append(Text.translatable("no-feeding-baby.togglemode-2"))
 					, false)
-					try {
-						NoFeedingBabyConfig.save()
-					}
-					catch(e: Exception) {
-						// Silent
-					}
+					NoFeedingBabyConfig.trySave()
 				}
 			}
 		)
@@ -90,12 +85,7 @@ object NoFeedingBabyModClient : ClientModInitializer {
 							)
 							.append(Text.translatable("no-feeding-baby.%s-3".format(resultKey)))
 						, false)
-						try {
-							NoFeedingBabyConfig.save()
-						}
-						catch(e: Exception) {
-							// Silent
-						}
+						NoFeedingBabyConfig.trySave()
 						// Do not send feeding packet
 						return ActionResult.FAIL
 					}

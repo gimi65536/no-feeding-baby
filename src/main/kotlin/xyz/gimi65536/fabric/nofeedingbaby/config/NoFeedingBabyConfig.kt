@@ -73,6 +73,15 @@ object NoFeedingBabyConfig{
 		fileconfig.close()
 	}
 
+	fun trySave(){
+		try{
+			save()
+		}
+		catch{
+			// Silent
+		}
+	}
+
 	fun load(){
 		val path = FabricLoader.getInstance().configDir.resolve(filename)
 		if(!path.exists()){

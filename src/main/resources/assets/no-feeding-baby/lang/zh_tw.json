@@ -9,6 +9,7 @@
 	"no-feeding-baby.general": "一般設定",
 	"no-feeding-baby.mode": "模式",
 	"no-feeding-baby.animal": "動物",
+	"no-feeding-baby.modname": "禁止餵養小動物",
 	"no-feeding-baby.key.category": "禁止餵養小動物",
 	"no-feeding-baby.key.toggle": "移入或移出名單",
 	"no-feeding-baby.key.bypass": "強制允許餵養",
