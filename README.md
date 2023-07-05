@@ -1,5 +1,7 @@
 # No Feeding Baby
 
+[中文](./README-zh-tw.md)
+
 ## About
 This is a fabric mod to prevent from feeding baby animals.
 
