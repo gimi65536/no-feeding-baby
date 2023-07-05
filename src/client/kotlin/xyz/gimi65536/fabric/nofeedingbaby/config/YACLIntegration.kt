@@ -24,19 +24,11 @@ object YACLIntegration{
 	fun MODE_DESCRIPTION(whitelistMode: Boolean): OptionDescription {
 		return when (whitelistMode) {
 			true -> OptionDescription.createBuilder()
-				.text(Text.translatable("no-feeding-baby.whitelistmode").setStyle(Style.EMPTY
-					.withColor(0xffffff)
-					.withBold(true)
-					.withUnderline(true)
-				))
+				.text(Text.translatable("no-feeding-baby.whitelistmode").setStyle(NoFeedingBabyMod.WHITELIST_STYLE))
 				.text(Text.translatable("no-feeding-baby.whitelist-tooltip"))
 				.build()
 			false -> OptionDescription.createBuilder()
-				.text(Text.translatable("no-feeding-baby.blacklistmode").setStyle(Style.EMPTY
-					.withColor(0x666666)
-					.withBold(true)
-					.withUnderline(true)
-				))
+				.text(Text.translatable("no-feeding-baby.blacklistmode").setStyle(NoFeedingBabyMod.BLACKLIST_STYLE))
 				.text(Text.translatable("no-feeding-baby.blacklist-tooltip"))
 				.build()
 		}
