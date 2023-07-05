@@ -64,7 +64,7 @@ object NoFeedingBabyMod : ModInitializer {
 						)
 						.then(literal("toggle")
 							.executes({context ->
-								NoFeedingBabyConfig.setBlacklistMode()
+								NoFeedingBabyConfig.toggleMode()
 								NoFeedingBabyConfig.trySave()
 								if(NoFeedingBabyConfig.whitelistMode){
 									context.getSource().sendMessage(Text.of("[No Feeding Baby] Whitelist mode"))
