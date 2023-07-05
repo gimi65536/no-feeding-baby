@@ -12,10 +12,13 @@
 	"no-feeding-baby.key.category": "禁止餵養小動物",
 	"no-feeding-baby.key.toggle": "移入或移出名單",
 	"no-feeding-baby.key.bypass": "強制允許餵養",
+	"no-feeding-baby.key.toggleMode": "切換黑白名單",
 	"no-feeding-baby.added-1": "已將 ",
 	"no-feeding-baby.added-2": " 加入",
 	"no-feeding-baby.added-3": "",
 	"no-feeding-baby.removed-1": "已將 ",
 	"no-feeding-baby.removed-2": " 從",
-	"no-feeding-baby.removed-3": "移除"
+	"no-feeding-baby.removed-3": "移除",
+	"no-feeding-baby.togglemode-1": "切換成 ",
+	"no-feeding-baby.togglemode-2": " 模式"
 }

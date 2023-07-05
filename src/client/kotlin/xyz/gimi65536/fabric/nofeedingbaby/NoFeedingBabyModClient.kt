@@ -11,6 +11,7 @@ import net.minecraft.text.Text
 import net.minecraft.text.Style
 import net.fabricmc.fabric.api.event.player.UseEntityCallback
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import xyz.gimi65536.fabric.nofeedingbaby.config.NoFeedingBabyConfig
 
 object NoFeedingBabyModClient : ClientModInitializer {
@@ -24,11 +25,38 @@ object NoFeedingBabyModClient : ClientModInitializer {
 		InputUtil.UNKNOWN_KEY.code,
 		"no-feeding-baby.key.category"
 	)
+	private val toggleModeKey = KeyBinding(
+		"no-feeding-baby.key.toggleMode",
+		InputUtil.UNKNOWN_KEY.code,
+		"no-feeding-baby.key.category"
+	)
 
 	override fun onInitializeClient() {
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
 		KeyBindingHelper.registerKeyBinding(toggleModifier)
 		KeyBindingHelper.registerKeyBinding(bypassModifier)
+		KeyBindingHelper.registerKeyBinding(toggleModeKey)
+
+		ClientTickEvents.END_CLIENT_TICK.register(
+			@Suppress("UNUSED_ANONYMOUS_PARAMETER")
+			fun(client){
+				if(toggleModeKey.wasPressed()){
+					MinecraftClient.getInstance().inGameHud.setOverlayMessage(
+						Text.translatable("no-feeding-baby.togglemode-1")
+						.append(
+							if(NoFeedingBabyConfig.whitelistMode){
+								Text.translatable("no-feeding-baby.whitelist")
+								.setStyle(NoFeedingBabyMod.WHITELIST_STYLE)
+							}else{
+								Text.translatable("no-feeding-baby.blacklist")
+								.setStyle(NoFeedingBabyMod.BLACKLIST_STYLE)
+							}
+						)
+						.append(Text.translatable("no-feeding-baby.togglemode-2"))
+					, true)
+				}
+			}
+		)
 
 		@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 		UseEntityCallback.EVENT.register(
