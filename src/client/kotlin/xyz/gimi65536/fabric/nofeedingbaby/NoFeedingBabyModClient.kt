@@ -58,7 +58,7 @@ object NoFeedingBabyModClient : ClientModInitializer {
 					try {
 						NoFeedingBabyConfig.save()
 					}
-					catch(Exception e) {
+					catch(e: Exception) {
 						// Silent
 					}
 				}
@@ -112,7 +112,7 @@ object NoFeedingBabyModClient : ClientModInitializer {
 						try {
 							NoFeedingBabyConfig.save()
 						}
-						catch(Exception e) {
+						catch(e: Exception) {
 							// Silent
 						}
 						// Do not send feeding packet
