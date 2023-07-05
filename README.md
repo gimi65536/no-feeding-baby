@@ -25,6 +25,9 @@ In the configuration, you can tell the mod to use whitelist mode or blacklist mo
 and add the identifier (such as `minecraft:cow`) into the list to enable/disable
 feeding.
 
+You can press ALT (default) and right-click the baby animal with food
+to switch the animal into or from the white/blacklist.
+
 ### Client- and Server-side Supports
 *The mod is designed for client uses.*
 However, it also works in the server side, too.
@@ -41,8 +44,9 @@ Baby animals get fed only if both two sides allow:
 the player will see a falsy feeding,
 which in fact doesn't consume any food.
 
-## TODO
-- It is better if users can *toggle* which baby animals can be fed in a more intuitive way,
-	such as "ALT+right-click" a baby.
+Server ops (with op level at least 2) can set configuration by commands `/nofeedingbaby`.
 
-I am not sure if I have time to do those, though.
+## Note
+Features I thought the mod should contain have been fully implemented.
+It is likely that I have no much time to maintain this mod,
+but if you have any suggestion, feel free to open issues on github.
