@@ -77,7 +77,7 @@ object NoFeedingBabyConfig{
 		try{
 			save()
 		}
-		catch{
+		catch(e: Exception){
 			// Silent
 		}
 	}
