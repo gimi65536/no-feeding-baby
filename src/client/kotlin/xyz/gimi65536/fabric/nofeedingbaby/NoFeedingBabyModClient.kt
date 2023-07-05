@@ -54,7 +54,7 @@ object NoFeedingBabyModClient : ClientModInitializer {
 							}
 						)
 						.append(Text.translatable("no-feeding-baby.togglemode-2"))
-					, true)
+					, false)
 					try {
 						NoFeedingBabyConfig.save()
 					}
@@ -73,42 +73,23 @@ object NoFeedingBabyModClient : ClientModInitializer {
 						// Do toggling
 						val identifier = EntityType.getId(entity.getType())
 						val toggleResult = NoFeedingBabyConfig.toggleAnimal(identifier.toString())
-						val entityTranskey = "entity-%s-%s".format(identifier.namespace, identifier.path)
-						if(toggleResult){
-							// Show something
-							MinecraftClient.getInstance().inGameHud.setOverlayMessage(
-								Text.translatable("no-feeding-baby.added-1")
-								.append(Text.translatable(entityTranskey).setStyle(Style.EMPTY.withBold(true)))
-								.append(Text.translatable("no-feeding-baby.added-2"))
-								.append(
-									if(NoFeedingBabyConfig.whitelistMode){
-										Text.translatable("no-feeding-baby.whitelist")
-										.setStyle(NoFeedingBabyMod.WHITELIST_STYLE)
-									}else{
-										Text.translatable("no-feeding-baby.blacklist")
-										.setStyle(NoFeedingBabyMod.BLACKLIST_STYLE)
-									}
-								)
-								.append(Text.translatable("no-feeding-baby.added-3"))
-							, true)
-						}else{
-							// Show something
-							MinecraftClient.getInstance().inGameHud.setOverlayMessage(
-								Text.translatable("no-feeding-baby.removed-1")
-								.append(Text.translatable(entityTranskey).setStyle(Style.EMPTY.withBold(true)))
-								.append(Text.translatable("no-feeding-baby.removed-2"))
-								.append(
-									if(NoFeedingBabyConfig.whitelistMode){
-										Text.translatable("no-feeding-baby.whitelist")
-										.setStyle(NoFeedingBabyMod.WHITELIST_STYLE)
-									}else{
-										Text.translatable("no-feeding-baby.blacklist")
-										.setStyle(NoFeedingBabyMod.BLACKLIST_STYLE)
-									}
-								)
-								.append(Text.translatable("no-feeding-baby.removed-3"))
-							, true)
-						}
+						val entityTranskey = "entity.%s.%s".format(identifier.namespace, identifier.path)
+						val resultKey = if (toggleResult) "added" else "removed"
+						MinecraftClient.getInstance().inGameHud.setOverlayMessage(
+							Text.translatable("no-feeding-baby.%s-1".format(resultKey))
+							.append(Text.translatable(entityTranskey).setStyle(Style.EMPTY.withBold(true)))
+							.append(Text.translatable("no-feeding-baby.%s-2".format(resultKey)))
+							.append(
+								if(NoFeedingBabyConfig.whitelistMode){
+									Text.translatable("no-feeding-baby.whitelist")
+									.setStyle(NoFeedingBabyMod.WHITELIST_STYLE)
+								}else{
+									Text.translatable("no-feeding-baby.blacklist")
+									.setStyle(NoFeedingBabyMod.BLACKLIST_STYLE)
+								}
+							)
+							.append(Text.translatable("no-feeding-baby.%s-3".format(resultKey)))
+						, false)
 						try {
 							NoFeedingBabyConfig.save()
 						}
