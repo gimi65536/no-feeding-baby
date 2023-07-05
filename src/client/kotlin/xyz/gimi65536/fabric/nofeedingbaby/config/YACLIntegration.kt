@@ -53,7 +53,7 @@ object YACLIntegration{
 					.binding(
 						NoFeedingBabyConfig.DEFAULT_WHITELISTMODE,
 						{NoFeedingBabyConfig.whitelistMode},
-						{value -> NoFeedingBabyConfig.whitelistMode = value}
+						{value -> NoFeedingBabyConfig.setListMode(value)}
 					)
 					.customController({opt -> BooleanController(opt, ::MODE_LIST_FORMATTER, false)})
 					.build()
@@ -64,7 +64,7 @@ object YACLIntegration{
 					.binding(
 						listOf(),
 						{NoFeedingBabyConfig.list.toList()},
-						{newList -> NoFeedingBabyConfig.list = LinkedHashSet(newList)}
+						{newList -> NoFeedingBabyConfig.setList(newList)}
 					)
 					.customController({opt -> StringController(opt)})
 					.initial("")
