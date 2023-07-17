@@ -1,5 +1,10 @@
 # 禁止餵養小動物
 
+![License](https://img.shields.io/github/license/gimi65536/no-feeding-baby)
+[![Modrinth下載次數](https://img.shields.io/modrinth/dt/4TvoD1ot?logo=modrinth&logoColor=%2300AF5C&label=modrinth&color=5da545)](https://modrinth.com/mod/no-feeding-baby)
+![支援MC版本](https://img.shields.io/badge/支援MC-1.20-blue)
+![最新模組版本](https://img.shields.io/github/v/release/gimi65536/no-feeding-baby?label=最新版本)
+
 ## 關於此模組
 這是一個禁止玩家餵養小動物的Fabric模組。
 

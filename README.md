@@ -1,5 +1,10 @@
 # No Feeding Baby
 
+![License](https://img.shields.io/github/license/gimi65536/no-feeding-baby)
+[![Modrinth download counter](https://img.shields.io/modrinth/dt/4TvoD1ot?logo=modrinth&logoColor=%2300AF5C&label=modrinth&color=5da545)](https://modrinth.com/mod/no-feeding-baby)
+![Support MC version](https://img.shields.io/badge/Support_MC-1.20-blue)
+![Latest mod version](https://img.shields.io/github/v/release/gimi65536/no-feeding-baby?label=Latest%20version)
+
 [中文](./README-zh-tw.md)
 
 ## About
