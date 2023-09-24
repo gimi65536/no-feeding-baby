@@ -3,10 +3,10 @@ name: Publish on GitHub, CurseForge & Modrinth
 on: [ workflow_dispatch ] # Only triggered manually
 
 env:
-  MINECRAFT_VERSION: 1.20.1
+  MINECRAFT_VERSION: 1.20.2
   JAVA_VERSION: 17
   VERSION: 1.2.0
-  RELEASE_NAME: 1.2.0+1.20.1
+  RELEASE_NAME: 1.2.0+1.20.2-beta
   MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
   CURSEFORGE_TOKEN: ${{ secrets.PUBLISH_CURSEFORGE_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.PUBLISH_GITHUB_TOKEN }}
@@ -56,7 +56,7 @@ jobs:
 
           name: "${{env.RELEASE_NAME}}"
           version: "${{env.VERSION}}"
-          version-type: release
+          version-type: beta
           changelog-file: CHANGELOG.md
 
           loaders: fabric
