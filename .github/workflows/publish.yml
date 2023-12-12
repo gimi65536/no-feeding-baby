@@ -5,7 +5,6 @@ on: [ workflow_dispatch ] # Only triggered manually
 env:
   MINECRAFT_VERSION: 1.20.2
   JAVA_VERSION: 17
-  VERSION: 1.2.0
   RELEASE_NAME: 1.2.0+1.20.2-beta
   MODRINTH_TOKEN: ${{ secrets.PUBLISH_MODRINTH_TOKEN }}
   CURSEFORGE_TOKEN: ${{ secrets.PUBLISH_CURSEFORGE_TOKEN }}
@@ -27,7 +26,7 @@ jobs:
           submodules: true
 
       - name: Setup Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v4
         with:
           distribution: "liberica"
           java-version: 17
@@ -40,7 +39,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Publish (CurseForge/Modrinth/GitHub)
-        uses: Kir-Antipov/mc-publish@v3.2
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
           #curseforge-id: 123456
           #curseforge-token: "${{env.CURSEFORGE_TOKEN}}"
@@ -48,17 +47,18 @@ jobs:
           modrinth-id: 4TvoD1ot
           modrinth-token: "${{env.MODRINTH_TOKEN}}"
 
-          github-tag: "v${{env.VERSION}}"
+          github-tag: "v${{env.RELEASE_NAME}}"
           github-token: "${{env.GITHUB_TOKEN}}"
-
-          files-primary: build/libs/!(*-@(all|sources)).jar
-          files-secondary: build/libs/*-sources.jar
+          files: |
+            build/libs/!(*-@(all|sources)).jar
+            build/libs/*-sources.jar
 
           name: "${{env.RELEASE_NAME}}"
-          version: "${{env.VERSION}}"
+          version: "${{env.RELEASE_NAME}}"
           version-type: beta
           changelog-file: CHANGELOG.md
 
           loaders: fabric
-          game-versions: "${{env.MINECRAFT_VERSION}}"
+          game-versions: |
+            ${{env.MINECRAFT_VERSION}}
           java: "${{env.JAVA_VERSION}}"
