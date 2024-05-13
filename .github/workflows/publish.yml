@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: "liberica"
-          java-version: "${{JAVA_VERSION}}"
+          java-version: "${{env.JAVA_VERSION}}"
 
       - name: Make Gradle Wrapper Executable
         if: ${{ runner.os != 'Windows' }}
