@@ -1,8 +1,8 @@
 plugins {
-	id 'fabric-loom' version '1.9-SNAPSHOT'
+	id 'net.fabricmc.fabric-loom-remap' version '1.15.4'
 	id 'maven-publish'
-	id "org.jetbrains.kotlin.jvm" version "2.0.0"
-	id 'com.github.johnrengelman.shadow' version '8.+'
+	id "org.jetbrains.kotlin.jvm" version "2.3.10"
+	id 'com.gradleup.shadow' version '8.3.10'
 	id 'java'
 }
 
@@ -25,6 +25,7 @@ repositories {
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
 	maven { url = "https://maven.terraformersmc.com/releases" }
+	maven { url = "https://api.modrinth.com/maven" }
 	maven { url = "https://maven.isxander.dev/releases" }
 	maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
 	maven { url = "https://maven.quiltmc.org/repository/release" }
@@ -56,7 +57,7 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 
-	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+	modImplementation "maven.modrinth:modmenu:${project.modmenu_version}"
 	modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
 
 	shade "com.electronwill.night-config:yaml:${project.nightconfig_version}"
@@ -92,7 +93,7 @@ java {
 
 shadowJar {
 	from("LICENSE") {
-		rename { "${it}_${project.archivesBaseName}"}
+		rename { "${it}_${project.archives_base_name}"}
 	}
 	from sourceSets.main.output
 	from sourceSets.client.output
