@@ -3,6 +3,7 @@ package xyz.gimi65536.fabric.nofeedingbaby
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 import net.minecraft.command.argument.IdentifierArgumentType
+import net.minecraft.command.DefaultPermissions
 import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.Entity
@@ -43,7 +44,7 @@ object NoFeedingBabyMod : ModInitializer {
 			@Suppress("UNUSED_ANONYMOUS_PARAMETER")
 			fun(dispatcher, registryAccess, environment){
 				dispatcher.register(literal("nofeedingbaby")
-					.requires({source -> source.hasPermissionLevel(2)})
+					.requires({source -> source.getPermissions().hasPermission(DefaultPermissions.GAMEMASTERS)})
 					// In "mode" sub-command, if whitelist mode after command then 1, otherwise 0
 					.then(literal("mode")
 						.then(literal("whitelist")
