@@ -9,26 +9,28 @@ import net.minecraft.entity.passive.AnimalEntity
 import net.minecraft.util.ActionResult
 import net.minecraft.text.Text
 import net.minecraft.text.Style
+import net.minecraft.util.Identifier
 import net.fabricmc.fabric.api.event.player.UseEntityCallback
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import xyz.gimi65536.fabric.nofeedingbaby.config.NoFeedingBabyConfig
 
 object NoFeedingBabyModClient : ClientModInitializer {
+	private val KEY_CATEGORY = KeyBinding.Category.create(Identifier.of("no-feeding-baby", "category"))
 	private val toggleModifier = KeyBinding(
 		"no-feeding-baby.key.toggle",
 		InputUtil.GLFW_KEY_LEFT_ALT,
-		"no-feeding-baby.key.category"
+		KEY_CATEGORY
 	)
 	private val bypassModifier = KeyBinding(
 		"no-feeding-baby.key.bypass",
 		InputUtil.UNKNOWN_KEY.code,
-		"no-feeding-baby.key.category"
+		KEY_CATEGORY
 	)
 	private val toggleModeKey = KeyBinding(
 		"no-feeding-baby.key.toggleMode",
 		InputUtil.UNKNOWN_KEY.code,
-		"no-feeding-baby.key.category"
+		KEY_CATEGORY
 	)
 
 	override fun onInitializeClient() {

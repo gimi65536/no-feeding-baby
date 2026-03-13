@@ -11,6 +11,7 @@
 	"no-feeding-baby.animal": "動物",
 	"no-feeding-baby.modname": "禁止餵養小動物",
 	"no-feeding-baby.key.category": "禁止餵養小動物",
+	"key.category.no-feeding-baby.category": "禁止餵養小動物",
 	"no-feeding-baby.key.toggle": "移入或移出名單",
 	"no-feeding-baby.key.bypass": "強制允許餵養",
 	"no-feeding-baby.key.toggleMode": "切換黑白名單",

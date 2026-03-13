@@ -11,6 +11,7 @@
 	"no-feeding-baby.animal": "Animal",
 	"no-feeding-baby.modname": "No Feeding Baby",
 	"no-feeding-baby.key.category": "No Feeding Baby",
+	"key.category.no-feeding-baby.category": "No Feeding Baby",
 	"no-feeding-baby.key.toggle": "Put into or drop from list",
 	"no-feeding-baby.key.bypass": "Forcely feeding baby",
 	"no-feeding-baby.key.toggleMode": "Toggle white/blacklist",
